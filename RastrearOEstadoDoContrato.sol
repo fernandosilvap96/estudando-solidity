@@ -1,4 +1,3 @@
-```
 pragma solidity 0.5.1;
 
 contract MyContract {
@@ -17,4 +16,3 @@ contract MyContract {
         return state == State.Active;
     }
 }
-```
