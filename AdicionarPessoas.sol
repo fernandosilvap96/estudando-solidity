@@ -5,7 +5,8 @@ contract MyContract {
     mapping(uint => Person) public people;
 
     uint256 startTime;
-
+    
+    //Só será possivel adicionar pessoas depois que o timestamp informado chegar
     modifier onlyWhileOpen() {
         require(block.timestamp >= startTime);
         _;
@@ -18,7 +19,7 @@ contract MyContract {
     }
 
     constructor() public {
-        startTime = 1544668513; // Update this value
+        startTime = 1544668513; // Timestamp definido, precisamos gerar um novo Timestamp pelo site Unix Timestamp Converter
     }
 
     function addPerson(string memory _firstName, string memory _lastName) public onlyWhileOpen {
